@@ -20,13 +20,12 @@ JSON
 }
 
 ### 2.2. Môi trường Cloud (--spring.profiles.active=cloud)
-Console Log khi khởi chạy:
-
-Plaintext
+**Console Log khi khởi chạy:**
+```text
 2026-08-18T17:56:00.000+07:00  INFO --- [main] c.e.demo.DemoApplication: The following 1 profile is active: "cloud"
 2026-08-18T17:56:01.150+07:00  INFO --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http)
 Kết quả gọi API (GET http://localhost:8080/api/v1/incident/config):
-
+```
 JSON
 {
   "activeProfile": "cloud",
