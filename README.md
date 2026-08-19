@@ -1,16 +1,11 @@
-# AI Logistics Incident Reporter - Bài 1: Triển khai cấu hình đa môi trường (Profiles)
-
-## 1. Giới thiệu
-Dự án minh họa cách cấu hình Hybrid AI kết nối linh hoạt giữa Ollama (Local) và OpenRouter/OpenAI (Cloud) dựa trên Spring Boot Profiles.
-
-## 2. Giải thích cơ chế nạp Profile động trong Spring Boot
+## 1. Giải thích cơ chế nạp Profile động trong Spring Boot
 * **Nạp Profile:** Spring Boot xác định profile hoạt động thông qua thuộc tính `spring.profiles.active` trong `application.properties` hoặc tham số khởi chạy `--spring.profiles.active`.
 * **Ghi đè cấu hình (Property Override):** Các cấu hình trong `application-{profile}.properties` sẽ tự động nạp và ghi đè lên cấu hình mặc định.
 * **Khởi tạo Auto-Configuration:** Dựa vào profile active, Spring AI Auto-Configuration sẽ quét điều kiện và khởi tạo Bean tương ứng (`OllamaChatModel` khi ở `local` hoặc `OpenAiChatModel` khi ở `cloud`).
 
-## 3. Minh chứng chạy thực tế (Console Log & API Test)
+## 2. Minh chứng chạy thực tế (Console Log & API Test)
 
-### 3.1. Môi trường Local (`--spring.profiles.active=local`)
+### 2.1. Môi trường Local (`--spring.profiles.active=local`)
 **Console Log khi khởi chạy:**
 ```text
 2026-08-18T17:55:00.000+07:00  INFO --- [main] c.e.demo.DemoApplication: The following 1 profile is active: "local"
@@ -24,7 +19,7 @@ JSON
   "status": "SUCCESS"
 }
 
-### 3.2. Môi trường Cloud (--spring.profiles.active=cloud)
+### 2.2. Môi trường Cloud (--spring.profiles.active=cloud)
 Console Log khi khởi chạy:
 
 Plaintext
